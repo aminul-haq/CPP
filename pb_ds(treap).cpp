@@ -79,6 +79,8 @@ int main(){
     treap_st.insert(vals(70,3));
     treap_st.insert(vals(15,4));
     treap_st.insert(vals(27,5));
+    treap_st.insert(vals(27,6));
+    treap_st.insert(vals(27,7));
     treap_st.insert(vals(45,6));
 
     pb_ds_st::iterator it;
@@ -87,5 +89,15 @@ int main(){
         vals v = *it;
         cout << v.num << " " << v.typ << endl;
     }
+    
+    it = treap_st.upper_bound(vals(27, 0));
+    treap_st.erase(it); // erasing one 27 from treap , here {27, 5} will be erased//
+    
+    
+    for(it = treap_st.begin();it!=treap_st.end();it++){
+        vals v = *it;
+        cout << v.num << " " << v.typ << endl;
+    }
+    
     return 0;
 }
